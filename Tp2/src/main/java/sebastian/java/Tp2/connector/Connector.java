@@ -1,5 +1,4 @@
 package sebastian.java.Tp2.connector;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 

@@ -8,9 +8,8 @@ select * from veterinarios;
 -- 1 listar  el nombre de los animales  que adopto el responsable 4
 
 
-select   concat( perros.nombre,'  ',gatos.nombre)    from perros
-join  gatos
-where              perros.idResponsable = 4;
+ select    perros.nombre  from perros
+ where              perros.idResponsable = 4;
 
  select   nombre    from gatos
  where              gatos.idResponsable = 4;

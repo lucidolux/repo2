@@ -11,10 +11,10 @@ public class TestConnector {
                    +"'victor','lopez','vilo@gmail.com','mañana',25000)";
                    st.execute(query);
                    
-//                    conn.createStatement().execute(
-//              "insert into responsables(nombre,apellido,direccion,telefono,ciudad,email,dni) values("
-//      +"'vanessa','martinez','sarmiento 666 depto 30',9384657364,'caba','vama@gmail.com',019287678)"
-//                            ;)
+                    conn.createStatement().execute(
+              "insert into responsables(nombre,apellido,direccion,telefono,ciudad,email,dni) values("
+      +"'vanessa','martinez','sarmiento 666 depto 30',384657364,'caba','vama@gmail.com',019287678)"
+                            );
            
         } catch (Exception e) { e.printStackTrace(); }         
     }

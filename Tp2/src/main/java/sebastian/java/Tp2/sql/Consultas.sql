@@ -1,5 +1,5 @@
 use hogarmascotas;
-use vNXTSt9W4T;
+--use vNXTSt9W4T;
 select * from perros;
 select * from gatos;
 select * from responsables;
@@ -18,7 +18,7 @@ select * from veterinarios;
 
 -- 2 listar los perros  adoptados en el 2016 
  select      *     from perros 
- where             perros.fechaAdopcion  
+ where             perros.f_adopcion  
  between       '2016-01-01' and '2016-12-31'
  and            perros.adopcion='adoptado';
 
@@ -39,14 +39,14 @@ select * from veterinarios;
 
 --  5 fecha  del perro que  ingreso al  hogar  mas recientemente
  select     *    from  perros
- order by        perros.fechaIngreso desc limit 1 ;
+ order by        perros.f_ingreso desc limit 1 ;
 
 
 
 --  6 cantidad de perros que atendió el veterinario con id 5   en el año 2016
  select     *    from  perros 
  where      perros.idVeterinario = 5    
- and        perros.fechaIngreso    
+ and        perros.f_ingreso    
  between   '2016-01-01' and '2016-12-31';
 
 
@@ -63,7 +63,7 @@ select * from veterinarios;
 
  -- 9  mostrar perros que comiencen con la letra n y el nombre del responsable por h
  select       perros.nombre as 'perro con letra n', responsables.nombre as 'responsable con letra H'  
- from perros
+ from         perros
  inner join   responsables 
  on           responsables.idResponsable = perros.idResponsable
  where        responsables.nombre like 'h%' and  perros.nombre like 'n%';

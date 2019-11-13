@@ -1,16 +1,19 @@
 package sebastian.java.Tp2.entities;
+
+import sebastian.java.Tp2.ennumerados.Turno;
+
 public class Veterinarios {
   private int idVeterinario; 
   private String nombre;
   private String apellido ;
   private String email; 
-  private String turno;
+  private Turno turno;
   private double salario;
 
     public Veterinarios() {
     }
 
-    public Veterinarios(String nombre, String apellido, String email, String turno, double salario) {
+    public Veterinarios(String nombre, String apellido, String email, Turno turno, double salario) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
@@ -18,7 +21,7 @@ public class Veterinarios {
         this.salario = salario;
     }
 
-    public Veterinarios(int idVeterinario, String nombre, String apellido, String email, String turno, double salario) {
+    public Veterinarios(int idVeterinario, String nombre, String apellido, String email, Turno turno, double salario) {
         this.idVeterinario = idVeterinario;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -59,11 +62,11 @@ public class Veterinarios {
         this.email = email;
     }
 
-    public String getTurno() {
+    public Turno getTurno() {
         return turno;
     }
 
-    public void setTurno(String turno) {
+    public void setTurno(Turno turno) {
         this.turno = turno;
     }
 
@@ -77,11 +80,17 @@ public class Veterinarios {
 
     @Override
     public String toString() {
-        return "Veterinarios{" 
-                + "idVeterinario=" + idVeterinario + ", nombre=" + nombre 
+        return "Veterinarios{" + "idVeterinario=" + idVeterinario + ", nombre=" + nombre 
                 + ", apellido=" + apellido + ", email=" + email + ", turno=" + turno 
                 + ", salario=" + salario + '}';
     }
-  
-  
+
+    
+    
 }
+
+   
+    
+
+   
+    

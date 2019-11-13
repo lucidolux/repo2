@@ -5,7 +5,7 @@ CREATE DATABASE          hogarmascotas;
 
 
 USE hogarmascotas;
-USE vNXTSt9W4T;
+-- USE vNXTSt9W4T;
 
 DROP TABLE IF EXISTS     gatos;
 CREATE TABLE  gatos (
@@ -16,12 +16,12 @@ CREATE TABLE  gatos (
   v_trivalente              ENUM('si', 'no') NOT NULL,
   v_leucemia                ENUM('si', 'no') NOT NULL,
   v_rabia                   ENUM('si', 'no') NOT NULL,
-  esterilizado              ENUM('esterilizado', 'no esteri') NOT NULL,
+  esterilizacion            ENUM('esterilizado', 'no_esteri') NOT NULL,
   peso                      DOUBLE NOT NULL,
   genero                    ENUM('hembra', 'macho') NOT NULL,
   f_ingreso                 DATE NOT NULL,
   idVeterinario             INT(11) NOT NULL,
-  adopcion                  ENUM('adoptado', 'no adopt') NOT NULL,
+  adopcion                  ENUM('adoptado', 'no_adopt') NOT NULL,
   idResponsable             INT(11) NULL DEFAULT NULL,
   f_adopcion                DATE NULL DEFAULT NULL,
   PRIMARY KEY               (idGato));
@@ -42,24 +42,24 @@ CREATE TABLE perros (
   v_adenovirus          ENUM('si', 'no') NOT NULL,
   v_hepatitis           ENUM('si', 'no') NOT NULL,
   v_rabia               ENUM('si', 'no') NOT NULL,
-  esterilizacion        ENUM('esterilizado', 'no esteri') NOT NULL,
+  esterilizacion        ENUM('esterilizado','no_esteri')NOT NULL, 
   peso                  DOUBLE NOT NULL,
   genero ENUM           ('hembra', 'macho') NOT NULL,
-  fechaIngreso          DATE NOT NULL,
+  f_Ingreso             DATE NOT NULL,
   idVeterinario         INT(11) NOT NULL,
-  adopcion ENUM         ('adoptado', 'no adopt') NOT NULL,
+  adopcion ENUM         ('adoptado', 'no_adopt') NOT NULL,
   idResponsable         INT(11) NULL DEFAULT NULL,
-  fechaAdopcion         DATE NULL DEFAULT NULL,
+  f_Adopcion            DATE NULL DEFAULT NULL,
   PRIMARY KEY           (idPerro));
  
-  
+  --  esterilizacion        ENUM('esterilizado','no_esteri') NOT NULL,
 
 DROP TABLE IF EXISTS     responsables;
 CREATE TABLE      responsables (
   idResponsable      INT(11) NOT NULL AUTO_INCREMENT,
   nombre             VARCHAR(45) NOT NULL,
   apellido           VARCHAR(45) NOT NULL,
-  direccion TEXT     NOT NULL,
+  direccion          VARCHAR(70)     NOT NULL,
   telefono           INT(11) NULL DEFAULT NULL,
   ciudad             VARCHAR(45) NOT NULL,
   email              VARCHAR(45) NULL DEFAULT NULL,

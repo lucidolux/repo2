@@ -12,15 +12,17 @@ private int dni;
     public Responsables() {
     }
 
-    public Responsables(int idResponsable, String nombre, String apellido, String direccion, int telefono, String ciudad, String email) {
-        this.idResponsable = idResponsable;
+    public Responsables(String nombre, String apellido, String direccion, int telefono, String ciudad, String email, int dni) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.direccion = direccion;
         this.telefono = telefono;
         this.ciudad = ciudad;
         this.email = email;
+        this.dni = dni;
     }
+
+  
 
     public Responsables(int idResponsable, String nombre, String apellido, String direccion, int telefono, String ciudad, String email, int dni) {
         this.idResponsable = idResponsable;
@@ -99,14 +101,12 @@ private int dni;
 
     @Override
     public String toString() {
-        return "Responsables{"
-                + "idResponsable=" + idResponsable + ", nombre=" + nombre
-                + ", apellido=" + apellido + ", direccion=" + direccion + ", telefono=" 
-                + telefono + ", ciudad=" + ciudad + ", email=" + email + ", dni=" + dni + '}';
-        
-        
+        return "Responsables{" + "idResponsable=" + idResponsable + ", nombre=" + nombre + ", apellido=" + apellido 
+                + ", direccion=" + direccion + ", telefono=" + telefono + ", ciudad=" + ciudad + ", email=" + email
+                + ", dni=" + dni + '}';
     }
- 
-    
+
+        
+        
 }
 

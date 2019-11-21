@@ -13,7 +13,7 @@ values
 select * from veterinarios;
   
 
-insert into  	responsables(nombre,apellido,direccion,telefono,ciudad,email,dni) 
+insert into  responsables(nombre,apellido,direccion,telefono,ciudad,email,dni) 
 values
         ('humberto','riffo','yrigoyen 2578 dpto 30',311345678,'caba','huri@gmail.com',12345678),
 	('julia','caressi','peron 2314 piso 5',989786765,'caba','juca@gmail.com',87654321),

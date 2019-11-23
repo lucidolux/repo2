@@ -1,5 +1,5 @@
 package sebastian.java.Tp2.entities;
-public class Responsables {
+public class Responsable {
 private int idResponsable;
 private String nombre;
 private String apellido;
@@ -9,10 +9,10 @@ private String  ciudad;
 private String email; 
 private int dni;
 
-    public Responsables() {
+    public Responsable() {
     }
 
-    public Responsables(String nombre, String apellido, String direccion, int telefono, String ciudad, String email, int dni) {
+    public Responsable(String nombre, String apellido, String direccion, int telefono, String ciudad, String email, int dni) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.direccion = direccion;
@@ -24,7 +24,7 @@ private int dni;
 
   
 
-    public Responsables(int idResponsable, String nombre, String apellido, String direccion, int telefono, String ciudad, String email, int dni) {
+    public Responsable(int idResponsable, String nombre, String apellido, String direccion, int telefono, String ciudad, String email, int dni) {
         this.idResponsable = idResponsable;
         this.nombre = nombre;
         this.apellido = apellido;

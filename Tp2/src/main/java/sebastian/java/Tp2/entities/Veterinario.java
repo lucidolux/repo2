@@ -1,8 +1,7 @@
 package sebastian.java.Tp2.entities;
-
 import sebastian.java.Tp2.ennumerados.Turno;
 
-public class Veterinarios {
+public class Veterinario {
   private int idVeterinario; 
   private String nombre;
   private String apellido ;
@@ -10,10 +9,10 @@ public class Veterinarios {
   private Turno turno;
   private double salario;
 
-    public Veterinarios() {
+    public Veterinario() {
     }
 
-    public Veterinarios(String nombre, String apellido, String email, Turno turno, double salario) {
+    public Veterinario(String nombre, String apellido, String email, Turno turno, double salario) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
@@ -21,7 +20,7 @@ public class Veterinarios {
         this.salario = salario;
     }
 
-    public Veterinarios(int idVeterinario, String nombre, String apellido, String email, Turno turno, double salario) {
+    public Veterinario(int idVeterinario, String nombre, String apellido, String email, Turno turno, double salario) {
         this.idVeterinario = idVeterinario;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -85,8 +84,6 @@ public class Veterinarios {
                 + ", salario=" + salario + '}';
     }
 
-    
-    
 }
 
    

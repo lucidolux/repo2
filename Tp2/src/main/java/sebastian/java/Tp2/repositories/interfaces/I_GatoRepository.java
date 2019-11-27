@@ -1,7 +1,9 @@
 package sebastian.java.Tp2.repositories.interfaces;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
+import sebastian.java.Tp2.ennumerados.V_trivalente;
 import sebastian.java.Tp2.entities.Gato;
 
 public interface I_GatoRepository {
@@ -28,7 +30,7 @@ public interface I_GatoRepository {
                  .contains(nombre.toLowerCase()))
                  .collect(Collectors.toList());
     }
-//
+
     default List<Gato> getLikeRaza (String raza){
         if(raza==null) return new ArrayList<Gato>();
         return getAll()
@@ -47,21 +49,33 @@ public interface I_GatoRepository {
                     .collect(Collectors.toList());
             }
 
-//    default Gato getByV_trivalente (enum V_trivalente){
-//        return getSll()
-//                .stream().filter(v->v.getV_trivalente()==v_trivalente)
+//    default List<Gato> getByV_trivalente (V_trivalente V_trivalente ){
+//        if(V_trivalente==null) return new ArrayList<Gato>();
+//        return getAll()
+//                .stream()
+//                .filter(g->g.getV_trivalente()==V_trivalente.si)
 //                .collect(Collectors.toList());
 //    }
 //    
-//    default Gato getLikeMayor_edad (Integer mayor_edad){
-//        if(edad==null) return new ArrayList<Gatos>();
+//    default List<Gato> getLikeMayor_edad (Integer mayor_edad){
+//        if(mayor_edad==null) return new ArrayList<Gato>();
 //        return getAll()
 //                .stream()
-//                .filter(me->me.getMayor_edad()==mayor_edad)
-//                .Collectors.toList());
+//                .filter(g->g.getMayor_edad()==mayor_edad)
+//                .collect(Collectors.toList());
 //    }
-//                
-    
-
+//    default List<Gato> getByMayorEdad(Integer mayorEdad){
+//        if(mayorEdad==null) return new ArrayList<Gato>();
+//        mayorEdad=
+//                .getAll()
+//                .stream()
+//                .max(Comparator.comparingInt(Gato::getEdad))
+//                .get()
+//                .getEdad();
+//        return getAll()
+//                .stream()
+//                .filter(g->g.get)
+//    }
+                
 
 }

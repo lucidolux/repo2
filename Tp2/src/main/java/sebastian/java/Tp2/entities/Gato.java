@@ -1,5 +1,4 @@
 package sebastian.java.Tp2.entities;
-import java.util.Date;
 import sebastian.java.Tp2.ennumerados.Adopcion;
 import sebastian.java.Tp2.ennumerados.Esterilizacion;
 import sebastian.java.Tp2.ennumerados.Genero;
@@ -18,16 +17,16 @@ public class Gato {
     private Esterilizacion esterilizacion;
     private double  peso;
     private Genero genero;
-    private java.util.Date f_ingreso;
+    private String f_ingreso;
     private int idVeterinario;
     private Adopcion adopcion;
     private int idResponsable;
-    private java.util.Date f_adopcion;
+    private String f_adopcion;
 
     public Gato() {
     }
 
-    public Gato(String nombre, String raza, int edad, V_trivalente v_trivalente, V_leucemia v_leucemia, V_rabia v_rabia, Esterilizacion esterilizacion, double peso, Genero genero, Date f_ingreso, int idVeterinario, Adopcion adopcion, int idResponsable, Date f_adopcion) {
+    public Gato(String nombre, String raza, int edad, V_trivalente v_trivalente, V_leucemia v_leucemia, V_rabia v_rabia, Esterilizacion esterilizacion, double peso, Genero genero, String f_ingreso, int idVeterinario, Adopcion adopcion, int idResponsable, String f_adopcion) {
         this.nombre = nombre;
         this.raza = raza;
         this.edad = edad;
@@ -44,7 +43,7 @@ public class Gato {
         this.f_adopcion = f_adopcion;
     }
 
-    public Gato(int idGato, String nombre, String raza, int edad, V_trivalente v_trivalente, V_leucemia v_leucemia, V_rabia v_rabia, Esterilizacion esterilizacion, double peso, Genero genero, Date f_ingreso, int idVeterinario, Adopcion adopcion, int idResponsable, Date f_adopcion) {
+    public Gato(int idGato, String nombre, String raza, int edad, V_trivalente v_trivalente, V_leucemia v_leucemia, V_rabia v_rabia, Esterilizacion esterilizacion, double peso, Genero genero, String f_ingreso, int idVeterinario, Adopcion adopcion, int idResponsable, String f_adopcion) {
         this.idGato = idGato;
         this.nombre = nombre;
         this.raza = raza;
@@ -143,11 +142,11 @@ public class Gato {
         this.genero = genero;
     }
 
-    public java.util.Date getF_ingreso() {
+    public String getF_ingreso() {
         return f_ingreso;
     }
 
-    public void setF_ingreso(java.util.Date f_ingreso) {
+    public void setF_ingreso(String f_ingreso) {
         this.f_ingreso = f_ingreso;
     }
 
@@ -175,11 +174,11 @@ public class Gato {
         this.idResponsable = idResponsable;
     }
 
-    public java.util.Date getF_adopcion() {
+    public String getF_adopcion() {
         return f_adopcion;
     }
 
-    public void setF_adopcion(java.util.Date f_adopcion) {
+    public void setF_adopcion(String f_adopcion) {
         this.f_adopcion = f_adopcion;
     }
     
@@ -193,4 +192,8 @@ public class Gato {
                 + ", genero=" + genero + ", f_ingreso=" + f_ingreso + ", idVeterinario=" + idVeterinario 
                 + ", adopcion=" + adopcion + ", idResponsable=" + idResponsable + ", f_adopcion=" + f_adopcion + '}';
   }
+
+    public Integer getMayor_edad() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

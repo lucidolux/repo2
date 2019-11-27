@@ -39,11 +39,11 @@ public class PerroRepository implements I_PerroRepository{
             ps.setString(9, perro.getEsterilizacion().toString());
             ps.setDouble(10, perro.getPeso());
             ps.setString(11, perro.getGenero().toString());
-            ps.setDate(12, (java.sql.Date)perro.getF_ingreso());
+            ps.setString(12, perro.getF_ingreso());
             ps.setInt(13, perro.getIdVeterinario());
             ps.setString(14, perro.getAdopcion().toString());
             ps.setInt(15, perro.getIdResponsable());
-            ps.setDate(16, (java.sql.Date)perro.getF_adopcion());
+            ps.setString(16, perro.getF_adopcion());
             ps.execute();
             ResultSet rs=ps.getGeneratedKeys();
             if(rs.next()) perro.setIdPerro(rs.getInt(1));
@@ -82,11 +82,11 @@ public class PerroRepository implements I_PerroRepository{
             ps.setString(9, perro.getEsterilizacion().toString());
             ps.setDouble(10, perro.getPeso());
             ps.setString(11, perro.getGenero().toString());
-            ps.setDate(12, (java.sql.Date)perro.getF_ingreso());
+            ps.setString(12, perro.getF_ingreso());
             ps.setInt(13, perro.getIdVeterinario());
             ps.setString(14, perro.getAdopcion().toString());
             ps.setInt(15, perro.getIdResponsable());
-            ps.setDate(16, (java.sql.Date)perro.getF_adopcion());
+            ps.setString(16,perro.getF_adopcion());
             ps.setInt(17, perro.getIdPerro());
             ps.execute();
         } catch (Exception e) { e.printStackTrace(); }
@@ -111,11 +111,11 @@ public class PerroRepository implements I_PerroRepository{
                         Esterilizacion.valueOf(rs.getString("esterilizacion")),
                         rs.getDouble("peso"),
                         Genero.valueOf(rs.getString("genero")),
-                        rs.getDate("f_ingreso"),
+                        rs.getString("f_ingreso"),
                         rs.getInt("idVeterinario"),
                         Adopcion.valueOf(rs.getString("adopcion")),
                         rs.getInt("idResponsable"),
-                        rs.getDate("f_adopcion")));
+                        rs.getString("f_adopcion")));
             }
             
         } catch (Exception e) { e.printStackTrace(); }

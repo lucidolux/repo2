@@ -1,5 +1,4 @@
 package sebastian.java.Tp2.entities;
-import java.util.Date;
 import sebastian.java.Tp2.ennumerados.Adopcion;
 import sebastian.java.Tp2.ennumerados.Esterilizacion;
 import sebastian.java.Tp2.ennumerados.Genero;
@@ -22,16 +21,16 @@ private V_rabia v_rabia;
 private Esterilizacion esterilizacion;   
 private double peso;  
 private Genero genero;   
-private java.util.Date f_ingreso;   
+private String f_ingreso;   
 private int idVeterinario;   
 private Adopcion adopcion;   
 private int idResponsable;   
-private java.util.Date f_adopcion;
+private String f_adopcion;
 
     public Perro() {
     }
 
-    public Perro(String nombre, String raza, int edad, V_parvovirus v_parvovirus, V_moquillo v_moquillo, V_adenovirus v_adenovirus, V_hepatitis v_hepatitis, V_rabia v_rabia, Esterilizacion esterilizacion, double peso, Genero genero, Date f_ingreso, int idVeterinario, Adopcion adopcion, int idResponsable, Date f_adopcion) {
+    public Perro(String nombre, String raza, int edad, V_parvovirus v_parvovirus, V_moquillo v_moquillo, V_adenovirus v_adenovirus, V_hepatitis v_hepatitis, V_rabia v_rabia, Esterilizacion esterilizacion, double peso, Genero genero, String f_ingreso, int idVeterinario, Adopcion adopcion, int idResponsable, String f_adopcion) {
         this.nombre = nombre;
         this.raza = raza;
         this.edad = edad;
@@ -50,7 +49,7 @@ private java.util.Date f_adopcion;
         this.f_adopcion = f_adopcion;
     }
 
-    public Perro(int idPerro, String nombre, String raza, int edad, V_parvovirus v_parvovirus, V_moquillo v_moquillo, V_adenovirus v_adenovirus, V_hepatitis v_hepatitis, V_rabia v_rabia, Esterilizacion esterilizacion, double peso, Genero genero, Date f_ingreso, int idVeterinario, Adopcion adopcion, int idResponsable, Date f_adopcion) {
+    public Perro(int idPerro, String nombre, String raza, int edad, V_parvovirus v_parvovirus, V_moquillo v_moquillo, V_adenovirus v_adenovirus, V_hepatitis v_hepatitis, V_rabia v_rabia, Esterilizacion esterilizacion, double peso, Genero genero, String f_ingreso, int idVeterinario, Adopcion adopcion, int idResponsable, String f_adopcion) {
         this.idPerro = idPerro;
         this.nombre = nombre;
         this.raza = raza;
@@ -167,11 +166,11 @@ private java.util.Date f_adopcion;
         this.genero = genero;
     }
 
-    public java.util.Date getF_ingreso() {
+    public String getF_ingreso() {
         return f_ingreso;
     }
 
-    public void setF_ingreso(java.util.Date f_ingreso) {
+    public void setF_ingreso(String f_ingreso) {
         this.f_ingreso = f_ingreso;
     }
 
@@ -199,11 +198,11 @@ private java.util.Date f_adopcion;
         this.idResponsable = idResponsable;
     }
 
-    public java.util.Date getF_adopcion() {
+    public String getF_adopcion() {
         return f_adopcion;
     }
 
-    public void setF_adopcion(java.util.Date f_adopcion) {
+    public void setF_adopcion(String f_adopcion) {
         this.f_adopcion = f_adopcion;
     }
         

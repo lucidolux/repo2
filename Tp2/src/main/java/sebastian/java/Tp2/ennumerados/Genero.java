@@ -1,2 +1,2 @@
 package sebastian.java.Tp2.ennumerados;
-public enum Genero { hermbra,macho }
+public enum Genero { hembra,macho }

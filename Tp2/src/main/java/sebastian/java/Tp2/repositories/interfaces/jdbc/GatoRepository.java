@@ -1,10 +1,8 @@
 package sebastian.java.Tp2.repositories.interfaces.jdbc;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import sebastian.java.Tp2.ennumerados.Adopcion;
 import sebastian.java.Tp2.ennumerados.Esterilizacion;
@@ -36,11 +34,11 @@ public class GatoRepository implements I_GatoRepository{
                 ps.setString(7, gato.getEsterilizacion().toString());
                 ps.setDouble(8, gato.getPeso());
                 ps.setString(9, gato.getGenero().toString());
-                ps.setDate(10, (java.sql.Date) gato.getF_ingreso());
+                ps.setString(10, gato.getF_ingreso());
                 ps.setInt(11, gato.getIdVeterinario());
                 ps.setString(12, gato.getAdopcion().toString());
                 ps.setInt(13, gato.getIdResponsable());
-                ps.setDate(14, (java.sql.Date) gato.getF_adopcion());
+                ps.setString(14,  gato.getF_adopcion());
                 ps.execute();
                 ResultSet rs=ps.getGeneratedKeys();
                 if(rs.next()) gato.setIdGato(rs.getInt(1));
@@ -75,11 +73,11 @@ public class GatoRepository implements I_GatoRepository{
             ps.setString(7, gato.getEsterilizacion().toString());
             ps.setDouble(8, gato.getPeso());
             ps.setString(9, gato.getGenero().toString());
-            ps.setDate(10,(java.sql.Date) gato.getF_ingreso());
+            ps.setString(10, gato.getF_ingreso());
             ps.setInt(11, gato.getIdVeterinario());
             ps.setString(12, gato.getAdopcion().toString());
             ps.setInt(13, gato.getIdResponsable());
-            ps.setDate(14, (java.sql.Date)gato.getF_adopcion());
+            ps.setString(14, gato.getF_adopcion());
             ps.setInt(15, gato.getIdGato());
             ps.execute();
                 
@@ -102,11 +100,11 @@ public class GatoRepository implements I_GatoRepository{
                 Esterilizacion.valueOf(rs.getString("esterilizacion")),
                 rs.getDouble("peso"),
                 Genero.valueOf(rs.getString("genero")),
-                rs.getDate("f_ingreso"),
+                rs.getString("f_ingreso"),
                 rs.getInt("idVeterinario"),
                 Adopcion.valueOf(rs.getString("adopcion")),
                 rs.getInt("idResponsable"),
-                rs.getDate("f_adopcion")
+                rs.getString("f_adopcion")
                 
              )); 
             }

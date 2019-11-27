@@ -48,8 +48,8 @@ public interface I_PerroRepository {
             
             /*
      
-                default List<Gato> getLikeEdad (Integer edad){
-        if(edad==null) return new ArrayList<Gato>();
+                default List<Perro> getLikeEdad (Integer edad){
+        if(edad==null) return new ArrayList<Perro>();
             return getAll()
                     .stream()
                     .filter(e->e.getEdad()==edad)

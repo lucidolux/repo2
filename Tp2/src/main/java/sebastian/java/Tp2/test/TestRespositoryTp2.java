@@ -121,6 +121,7 @@ public class TestRespositoryTp2 {
                   perro.setIdVeterinario(5);
                   perro.setAdopcion(Adopcion.adoptado);
                   perro.setIdResponsable(8);//nota no permite el campo null
+                  perro.setF_adopcion("2019-03-02");
            //************************getAll***********************       
                   pr.getAll().forEach(System.out::println);
    

@@ -49,13 +49,13 @@ public interface I_GatoRepository {
                     .collect(Collectors.toList());
             }
 
-//    default List<Gato> getByV_trivalente (V_trivalente V_trivalente ){
-//        if(V_trivalente==null) return new ArrayList<Gato>();
-//        return getAll()
-//                .stream()
-//                .filter(g->g.getV_trivalente()==V_trivalente.si)
-//                .collect(Collectors.toList());
-//    }
+    default List<Gato> getByV_trivalente (V_trivalente V_trivalente ){
+        if(V_trivalente==null) return new ArrayList<Gato>();
+        return getAll()
+                .stream()
+                .filter(g->g.getV_trivalente()==V_trivalente.si)
+                .collect(Collectors.toList());
+    }
 //    
 //    default List<Gato> getLikeMayor_edad (Integer mayor_edad){
 //        if(mayor_edad==null) return new ArrayList<Gato>();

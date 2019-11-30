@@ -7,26 +7,24 @@ public class Veterinario {
   private String apellido ;
   private String email; 
   private Turno turno;
-  private double salario;
+
 
     public Veterinario() {
     }
 
-    public Veterinario(String nombre, String apellido, String email, Turno turno, double salario) {
+    public Veterinario(String nombre, String apellido, String email, Turno turno) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
         this.turno = turno;
-        this.salario = salario;
     }
 
-    public Veterinario(int idVeterinario, String nombre, String apellido, String email, Turno turno, double salario) {
+    public Veterinario(int idVeterinario, String nombre, String apellido, String email, Turno turno) {
         this.idVeterinario = idVeterinario;
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
         this.turno = turno;
-        this.salario = salario;
     }
 
     public int getIdVeterinario() {
@@ -69,22 +67,19 @@ public class Veterinario {
         this.turno = turno;
     }
 
-    public double getSalario() {
-        return salario;
-    }
-
-    public void setSalario(double salario) {
-        this.salario = salario;
-    }
-
     @Override
     public String toString() {
-        return "Veterinarios{" + "idVeterinario=" + idVeterinario + ", nombre=" + nombre 
-                + ", apellido=" + apellido + ", email=" + email + ", turno=" + turno 
-                + ", salario=" + salario + '}';
+        return "Veterinario{" + "idVeterinario=" + idVeterinario + ", nombre=" + nombre + ", apellido=" + apellido
+                + ", email=" + email + ", turno=" + turno + '}';
     }
 
-}
+
+    
+    }
+
+
+
+
 
    
     

@@ -1,27 +1,14 @@
 package sebastian.java.Tp2.entities;
 import sebastian.java.Tp2.ennumerados.Adopcion;
-import sebastian.java.Tp2.ennumerados.Esterilizacion;
 import sebastian.java.Tp2.ennumerados.Genero;
-import sebastian.java.Tp2.ennumerados.V_adenovirus;
-import sebastian.java.Tp2.ennumerados.V_hepatitis;
-import sebastian.java.Tp2.ennumerados.V_moquillo;
-import sebastian.java.Tp2.ennumerados.V_parvovirus;
-import sebastian.java.Tp2.ennumerados.V_rabia;
+
 
 public class Perro {
 private int idPerro;    
 private String nombre;   
 private String raza;   
 private int edad;   
-private V_parvovirus v_parvovirus;   
-private V_moquillo v_moquillo;   
-private V_adenovirus v_adenovirus;  
-private V_hepatitis v_hepatitis;   
-private V_rabia v_rabia;   
-private Esterilizacion esterilizacion;   
-private double peso;  
 private Genero genero;   
-private String f_ingreso;   
 private int idVeterinario;   
 private Adopcion adopcion;   
 private int idResponsable;   
@@ -30,7 +17,114 @@ private String f_adopcion;
     public Perro() {
     }
 
-    public Perro(String nombre, String raza, int edad, V_parvovirus v_parvovirus, V_moquillo v_moquillo, V_adenovirus v_adenovirus, V_hepatitis v_hepatitis, V_rabia v_rabia, Esterilizacion esterilizacion, double peso, Genero genero, String f_ingreso, int idVeterinario, Adopcion adopcion, int idResponsable, String f_adopcion) {
+    public Perro(String nombre, String raza, int edad, Genero genero, int idVeterinario, Adopcion adopcion, int idResponsable, String f_adopcion) {
+        this.nombre = nombre;
+        this.raza = raza;
+        this.edad = edad;
+        this.genero = genero;
+        this.idVeterinario = idVeterinario;
+        this.adopcion = adopcion;
+        this.idResponsable = idResponsable;
+        this.f_adopcion = f_adopcion;
+    }
+
+    public Perro(int idPerro, String nombre, String raza, int edad, Genero genero, int idVeterinario, Adopcion adopcion, int idResponsable, String f_adopcion) {
+        this.idPerro = idPerro;
+        this.nombre = nombre;
+        this.raza = raza;
+        this.edad = edad;
+        this.genero = genero;
+        this.idVeterinario = idVeterinario;
+        this.adopcion = adopcion;
+        this.idResponsable = idResponsable;
+        this.f_adopcion = f_adopcion;
+    }
+
+    public int getIdPerro() {
+        return idPerro;
+    }
+
+    public void setIdPerro(int idPerro) {
+        this.idPerro = idPerro;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getRaza() {
+        return raza;
+    }
+
+    public void setRaza(String raza) {
+        this.raza = raza;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public Genero getGenero() {
+        return genero;
+    }
+
+    public void setGenero(Genero genero) {
+        this.genero = genero;
+    }
+
+    public int getIdVeterinario() {
+        return idVeterinario;
+    }
+
+    public void setIdVeterinario(int idVeterinario) {
+        this.idVeterinario = idVeterinario;
+    }
+
+    public Adopcion getAdopcion() {
+        return adopcion;
+    }
+
+    public void setAdopcion(Adopcion adopcion) {
+        this.adopcion = adopcion;
+    }
+
+    public int getIdResponsable() {
+        return idResponsable;
+    }
+
+    public void setIdResponsable(int idResponsable) {
+        this.idResponsable = idResponsable;
+    }
+
+    public String getF_adopcion() {
+        return f_adopcion;
+    }
+
+    public void setF_adopcion(String f_adopcion) {
+        this.f_adopcion = f_adopcion;
+    }
+
+    @Override
+    public String toString() {
+        return "Perro{" + "idPerro=" + idPerro + ", nombre=" + nombre + ", raza=" + raza + ", edad=" + edad + ","
+                + " genero=" + genero + ", idVeterinario=" + idVeterinario + ", adopcion=" + adopcion
+                + ", idResponsable=" + idResponsable +", f_adopcion=" + f_adopcion + '}';
+    }
+
+    
+    
+}
+
+/*
+public Perro(String nombre, String raza, int edad, V_parvovirus v_parvovirus, V_moquillo v_moquillo, V_adenovirus v_adenovirus, V_hepatitis v_hepatitis, V_rabia v_rabia, Esterilizacion esterilizacion, double peso, Genero genero, String f_ingreso, int idVeterinario, Adopcion adopcion, int idResponsable, String f_adopcion) {
         this.nombre = nombre;
         this.raza = raza;
         this.edad = edad;
@@ -217,3 +311,5 @@ private String f_adopcion;
     }
     
 }
+
+*/

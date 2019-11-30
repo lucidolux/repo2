@@ -15,14 +15,13 @@ public class VeterinarioRepository implements I_VeterinarioRepository{
     @Override
     public void save(Veterinario veterinario) {
         if(veterinario==null);
-        try (PreparedStatement ps=conn.prepareStatement("insert into veterinarios (nombre,apellido,email,turno,salario) values(?,?,?,?,?)",
+        try (PreparedStatement ps=conn.prepareStatement("insert into veterinarios (nombre,apellido,email,turno,) values(?,?,?,?)",
                     PreparedStatement.RETURN_GENERATED_KEYS
         )){
            ps.setString(1, veterinario.getNombre());
            ps.setString(2, veterinario.getApellido());
            ps.setString(3, veterinario.getEmail());
            ps.setString(4, veterinario.getTurno().toString());
-           ps.setDouble(5, veterinario.getSalario());
            ps.execute();
            ResultSet rs=ps.getGeneratedKeys();
            if(rs.next()) veterinario.setIdVeterinario(rs.getInt(1));// aque hace referencia el 1 ? 
@@ -44,13 +43,12 @@ public class VeterinarioRepository implements I_VeterinarioRepository{
     public void update(Veterinario veterinario) {
             if(veterinario==null) return;
         try  (PreparedStatement ps=conn.prepareStatement(
-         "update veterinarios set nombre=?, apellido=?, email=?, turno=?, salario=?"
+         "update veterinarios set nombre=?, apellido=?, email=?, turno=?"
         )){
              ps.setString(1, veterinario.getNombre());
              ps.setString(2, veterinario.getApellido());
              ps.setString(3, veterinario.getEmail());
              ps.setString(4, veterinario.getTurno().toString());
-             ps.setDouble(5, veterinario.getSalario());
              ps.execute();
         } catch (Exception e) { e.printStackTrace(); }
          
@@ -59,16 +57,15 @@ public class VeterinarioRepository implements I_VeterinarioRepository{
     @Override
     public List<Veterinario> getAll() {
            List<Veterinario>list=new ArrayList();
-             try (ResultSet rs=conn.createStatement().executeQuery("select * from veterinarios"
-                )){
+             try (ResultSet rs=conn.createStatement().executeQuery("select * from veterinarios")){
                  while (rs.next()){
                      list.add(new Veterinario(
-                             rs.getInt("idVeterinario"),  // getInt String string //ó// getInt int i  para todos los get 
+                             rs.getInt("idVeterinario"),
                              rs.getString("nombre"),
                              rs.getString("apellido"),
                              rs.getString("mail"),
-                             Turno.valueOf(rs.getString("turno")),
-                             rs.getDouble("salario") 
+                             Turno.valueOf(rs.getString("turno"))
+                       
                     ));
                      
               }    

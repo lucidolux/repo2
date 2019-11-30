@@ -1,9 +1,7 @@
 package sebastian.java.Tp2.repositories.interfaces;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
-import sebastian.java.Tp2.ennumerados.V_trivalente;
 import sebastian.java.Tp2.entities.Gato;
 
 public interface I_GatoRepository {
@@ -48,14 +46,6 @@ public interface I_GatoRepository {
                     .filter(e->e.getEdad()==edad)
                     .collect(Collectors.toList());
             }
-
-    default List<Gato> getByV_trivalente (V_trivalente V_trivalente ){
-        if(V_trivalente==null) return new ArrayList<Gato>();
-        return getAll()
-                .stream()
-                .filter(g->g.getV_trivalente()==V_trivalente.si)
-                .collect(Collectors.toList());
-    }
 //    
 //    default List<Gato> getLikeMayor_edad (Integer mayor_edad){
 //        if(mayor_edad==null) return new ArrayList<Gato>();

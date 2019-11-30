@@ -7,27 +7,29 @@ private static String driver="com.mysql.jdbc.Driver";     // driver mysql 5
 //  private static String driver="com.mysql.cj.jdbc.Driver";    // driver mysql 6 o sup
 
 
-   // Localhost
-//    private static String url="jdbc:mysql://127.0.0.1:3306/hogarmascotas";
-//    private static String user="root";
-//    private static String pass="root";
+//    Localhost
+    private static String url="jdbc:mysql://127.0.0.1:3306/hogarmascotas";
+    private static String user="root";
+    private static String pass="";
    
 
 
         //remotemysql.com
-    private static String url="jdbc:mysql://remotemysql.com:3306/vNXTSt9W4T";
-    private static String user="vNXTSt9W4T";
-    private static String pass="JimfIMuLhm";
+//    private static String url="jdbc:mysql://remotemysql.com:3306/vNXTSt9W4T";
+//    private static String user="vNXTSt9W4T";
+//    private static String pass="JimfIMuLhm";
     
     private static Connection conn=null;
     private Connector(){}
     public synchronized static Connection getConnection(){
-        if(conn==null){
+        try {
+               if(conn==null||conn.isClosed()){
             try {
                 Class.forName(driver);
                 conn=DriverManager.getConnection(url,user,pass);
             } catch (Exception e) { e.printStackTrace(); }
         }
+        } catch (Exception e) { e.printStackTrace(); }
         return conn;
     
     }

@@ -12,7 +12,8 @@ public interface I_PerroRepository {
         
         default Perro getByIdPerro (Integer idPerro){
             return getAll()
-                    .stream().filter(i->i.getIdPerro()==idPerro)
+                    .stream()
+                    .filter(i->i.getIdPerro()==idPerro)
                     .findFirst()
                     .orElse(new Perro());
         }

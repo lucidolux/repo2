@@ -15,13 +15,16 @@ public class ResponsableRepository implements I_ResponsableRepository{
     @Override
     public void save(Responsable responsable) {
       if(responsable==null) return;
-        try (PreparedStatement ps=conn.prepareStatement("insert into responsables (nombre,apellido,direccion,telefono,ciudad,email,dni) values (?,?,?,?,?,?,?)",
+        try (PreparedStatement ps=conn.prepareStatement("insert into responsables (nombre,apellido,direccion,telefono,dni) values (?,?,?,?,?)",
                 PreparedStatement.RETURN_GENERATED_KEYS
             
         )) {
              ps.setString(1, responsable.getNombre());
              ps.setString(2, responsable.getApellido());
-        } catch (Exception e) { e.printStackTrace();      }
+             ps.setString(3, responsable.getDireccion());
+             ps.setInt(4, responsable.getTelefono());
+             ps.setInt(5, responsable.getDni());
+        } catch (Exception e) { e.printStackTrace(); }
       
      }
     
@@ -40,15 +43,13 @@ public class ResponsableRepository implements I_ResponsableRepository{
     @Override
     public void update(Responsable responsable) {
         if(responsable==null) return;
-        try (PreparedStatement ps=conn.prepareStatement("update responsables nombre=?, apellido=?, direccion=?, telefono=?, ciudad=?, email=?, dni=? "
+        try (PreparedStatement ps=conn.prepareStatement("update responsables nombre=?, apellido=?, direccion=?, telefono=?, dni=? "
         )) {
             ps.setString(1, responsable.getNombre());
             ps.setString(2, responsable.getApellido() );
             ps.setString(3, responsable.getDireccion());
             ps.setInt(4, responsable.getTelefono());
-            ps.setString(5, responsable.getCiudad());
-            ps.setString(6, responsable.getEmail());
-            ps.setInt(7, responsable.getDni());
+            ps.setInt(5, responsable.getDni());
             ps.execute();
      
         } catch (Exception e) { e.printStackTrace();}
@@ -58,7 +59,7 @@ public class ResponsableRepository implements I_ResponsableRepository{
     @Override
     public List<Responsable> getAll() {
         List<Responsable>list = new ArrayList();
-        try (ResultSet rs=conn.createStatement().executeQuery("select * from responsables"
+        try (ResultSet rs=conn.createStatement().executeQuery("select * from \"responsables\""
         )) {
             while(rs.next()){
                 list.add(new Responsable( 
@@ -67,8 +68,6 @@ public class ResponsableRepository implements I_ResponsableRepository{
                         rs.getString("apellido"),
                         rs.getString("direccion"),
                         rs.getInt("telefono"),
-                        rs.getString("ciudad"),
-                        rs.getString("email"),
                         rs.getInt("dni")
                 ));
             }

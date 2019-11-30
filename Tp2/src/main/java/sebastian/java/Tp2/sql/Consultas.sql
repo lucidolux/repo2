@@ -28,7 +28,7 @@ select * from veterinarios;
  from       perros 
  order by   perros.edad desc limit 1;
 
--- 4 listar los perros que tengan  solo  vacuna del parvovirus 
+-- 4 listar los perros que tengan  solo  vacuna del parvovirus //
  select *       from     perros
  where          perros.v_rabia='no'
  and            perros.v_hepatitis='no'
@@ -37,13 +37,13 @@ select * from veterinarios;
  and            perros.v_parvovirus='si';
 
 
---  5 fecha  del perro que  ingreso al  hogar  mas recientemente
+--  5 fecha  del perro que  ingreso al  hogar  mas recientemente ///////
  select     *    from  perros
  order by        perros.f_ingreso desc limit 1 ;
 
 
 
---  6 cantidad de perros que atendió el veterinario con id 5   en el año 2016
+--  6 cantidad de perros que atendió el veterinario con id 5   en el año 2016////
  select     *    from  perros 
  where      perros.idVeterinario = 5    
  and        perros.f_ingreso    

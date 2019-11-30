@@ -1,8 +1,5 @@
 use  hogarmascotas;
 
-
-
-
 insert into veterinarios (nombre,apellido,email,turno) 
 values			
 	('andrea','rodriguez','anro@hotmail.com','mañana'),

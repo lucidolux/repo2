@@ -28,29 +28,29 @@ select * from veterinarios;
  from       perros 
  order by   perros.edad desc limit 1;
 
--- 4 listar los perros que tengan  solo  vacuna del parvovirus //
+-- 4 listar los perros que estenadoptados //
  select *       from     perros
- where          perros.v_rabia='no'
- and            perros.v_hepatitis='no'
- and            perros.v_adenovirus='no' 
- and            perros.v_moquillo='no'
- and            perros.v_parvovirus='si';
+ where            perros.adopcion='adoptado'
+--  and            perros.v_hepatitis='no'
+--  and            perros.v_adenovirus='no' 
+--  and            perros.v_moquillo='no'
+--  and            perros.v_parvovirus='si';
 
 
---  5 fecha  del perro que  ingreso al  hogar  mas recientemente ///////
+--  5 fecha  del perro que  se adopto    mas recientemente ///////
  select     *    from  perros
- order by        perros.f_ingreso desc limit 1 ;
+ order by        perros.f_adopcion desc limit 1 ;
 
 
 
---  6 cantidad de perros que atendió el veterinario con id 5   en el año 2016////
+--  6 cantidad de perros que atendió el veterinario con id 5    ////
  select     *    from  perros 
  where      perros.idVeterinario = 5    
- and        perros.f_ingreso    
- between   '2016-01-01' and '2016-12-31';
+--  and        perros.f_ingreso    
+--  between   '2016-01-01' and '2016-12-31';
 
 
--- 7 listar  los nomnbres de los  perros que son  adoptados junto con el nombre de su responsable 
+-- 7 listar  los nombres de los  perros que son  adoptados junto con el nombre de su responsable 
  select         perros.nombre as 'perro', responsables.nombre as 'responsable'   from  perros
  inner join     responsables 
  on             responsables.idResponsable = perros.idResponsable
